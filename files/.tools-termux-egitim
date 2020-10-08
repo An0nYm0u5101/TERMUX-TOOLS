@@ -1,0 +1,3 @@
+#!/bin/bash
+cd $HOME/.TERMUX-EGITIM
+bash termux-egitim.sh
