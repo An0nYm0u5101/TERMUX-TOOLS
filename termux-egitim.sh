@@ -124,6 +124,7 @@ if [[ $hatakontrol == 0 ]];then
 	echo
 	echo
 	echo
+	rm tool.txt tools.txt tool.txte
 	exit
 fi
 
@@ -148,6 +149,7 @@ if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
 	echo
+	rm tool.txt tools.txt tool.txte
 	exit
 fi
 satir=$(cat tools.txt |wc -l)
@@ -159,6 +161,7 @@ if [[ $sec -gt $satir ]];then
 	echo
 	echo
 	echo
+	rm tool.txt tools.txt tool.txte
 	exit
 fi
 if [[ $sec -le 0 ]];then
@@ -169,6 +172,7 @@ if [[ $sec -le 0 ]];then
 	echo
 	echo
 	echo
+	rm tool.txt tools.txt tool.txte
 	exit
 fi
 echo
