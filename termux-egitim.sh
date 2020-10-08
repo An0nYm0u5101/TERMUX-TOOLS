@@ -7,6 +7,7 @@ if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 	cd ..
 	mkdir $HOME/.TERMUX-EGITIM
 	mv * $HOME/.TERMUX-EGITIM
+	mv .git $HOME/.TERMUX-EGITIM
 	cd ..
 	if [[ -a TERMUX-EGITIM ]];then
 		rm -rf TERMUX-EGITIM
