@@ -63,12 +63,9 @@ if [[ $1 == güncelle || $1 == güncelleme ]];then
 
 fi
 #################### OTOMATİK GÜNCEKLEME ####################
-
-guncelleme=$(curl -s "https://github.com/termux-egitim/$buyukad" |grep -o 16.09.2020)
 readme=$(sed -n 3p README.md |tr -d "Güncelleme ")
-#if [ "$guncelleme" = "$readme" ];then
-#	echo
-if [[ 5 == 5 ]];then
+guncelleme=$(curl -s "https://github.com/termux-egitim/$buyukad" |grep -o $readme)
+if [ "$guncelleme" = "$readme" ];then
 	echo
 else
 	kontrol=$(curl -s https://github.com/termux-egitim/$kucukad |grep -o not-found |wc -w)
