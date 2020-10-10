@@ -2,7 +2,7 @@
 clear
 if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 	cd files
-	mv .tools-termux-egitim tools-termux-egitim
+	cp .tools-termux-egitim tools-termux-egitim
 	mv tools-termux-egitim /data/data/com.termux/files/usr/bin
 	cd ..
 	mkdir $HOME/.TERMUX-EGITIM
