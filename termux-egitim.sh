@@ -1,5 +1,20 @@
 #!/bin/bash
 clear
+hatakontrol=$(curl -s https://github.com/termux-egitim |wc -l)
+if [[ $hatakontrol == 0 ]];then
+	echo
+	echo
+	echo
+	printf "\e[31m
+	[!]\e[31m \e[0mHATA OLUŞTU \e[31m!!!\e[33m
+
+	[*] \e[0mİNTERNET BAĞLANTINIZI KONTROL EDİN
+	"
+	echo
+	echo
+	echo
+	exit
+fi
 if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 	cd files
 	cp .tools-termux-egitim tools-termux-egitim
@@ -111,22 +126,6 @@ sed -ie "s/<a href=\"\/termux-egitim\///g" tool.txt
 sed -ie "s/\" itemprop=\"name codeRepository\" >//g" tool.txt
 cat tool.txt | tr -d " " > tools.txt
 bash banner.sh
-hatakontrol=$(cat tools.txt |wc -l)
-if [[ $hatakontrol == 0 ]];then
-	echo
-	echo
-	echo
-	printf "\e[31m
-	[!]\e[31m \e[0mHATA OLUŞTU \e[31m!!!\e[33m
-	
-	[*] \e[0mİNTERNET BAĞLANTINIZI KONTROL EDİN
-	"
-	echo
-	echo
-	echo
-	rm tool.txt tools.txt tool.txte
-	exit
-fi
 sayi=$(cat tools.txt |wc -l)
 printf "\e[31m
    //////////// \e[97mTOOLS\e[31m //////////////
