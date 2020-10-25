@@ -1,3 +1,3 @@
 termux-egitim
 TERMUX-EGITIM
-Güncelleme 10.10.2020
+Güncelleme 25.10.2020

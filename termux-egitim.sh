@@ -127,20 +127,21 @@ if [[ $hatakontrol == 0 ]];then
 	rm tool.txt tools.txt tool.txte
 	exit
 fi
-
+sayi=$(cat tools.txt |wc -l)
 printf "\e[31m
-   //////////// \e[0mTOOLS\e[31m //////////////
+   //////////// \e[97mTOOLS\e[31m //////////////
+   
+   "
+for no in `seq 1 $sayi` ; do
+	printf "
+	\e[97m[$no] \e[32m $(sed -n $no\p tools.txt)
+	"
+done
 
-
-\e[92m$(cat -b tools.txt)\e[31m
-
-
-   ##########################
-\e[0m"
 echo
 echo
 echo
-read -e -p $'\e[92m termuxeğitim\e[0m@\e[92mtools\e[0m~\e[91m>> \e[0m' sec
+read -e -p $' \e[92mtermuxeğitim\e[97m@\e[92mtools\e[97m~\e[91m>> \e[0m' sec
 if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
@@ -150,6 +151,18 @@ if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
 	rm tool.txt tools.txt tool.txte
+	exit
+elif [[ $sec == telegram || $sec == TELEGRAM ]];then
+	am start -a android.intent.action.VIEW https://t.me/termuxegitimm
+	exit
+elif [[ $sec == instagram || $sec == İNSTAGRAM ]];then
+	am start -a android.intent.action.VIEW https://www.instagram.com/termuxegitim
+	exit
+elif [[ $sec == youtube || $sec == YOUTUBE ]];then
+	am start -a android.intent.action.VIEW https://m.youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g
+	exit
+elif [[ $sec == github || $sec == GİTHUB ]];then
+	am start -a android.intent.action.VIEW https://github.com/termux-egitim
 	exit
 fi
 satir=$(cat tools.txt |wc -l)
