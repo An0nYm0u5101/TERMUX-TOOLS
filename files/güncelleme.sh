@@ -76,7 +76,7 @@ else
 	cd $kucukad
 	mv * ../
 	mv .git ../
-	mv .pidkapat ../
+	mv .pidkapat.sh ../
 	cd ..
 	rm -rf $kucukad
 	bash .pidkapat.sh
