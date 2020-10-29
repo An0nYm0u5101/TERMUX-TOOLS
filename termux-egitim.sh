@@ -132,9 +132,15 @@ printf "\e[31m
    
    "
 for no in `seq 1 $sayi` ; do
-	printf "
-	\e[97m[$no] \e[32m $(sed -n $no\p tools.txt)
-	"
+	if [[ $no -le 9 ]];then
+		printf "
+		\e[97m[$no]  \e[32m $(sed -n $no\p tools.txt)
+		"
+	elif [[ $no -gt 9 ]];then
+		printf "
+		\e[97m[$no] \e[32m $(sed -n $no\p tools.txt)
+		"
+	fi
 done
 
 echo
