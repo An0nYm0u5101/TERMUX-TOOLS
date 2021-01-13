@@ -1,23 +1,4 @@
 #!/bin/bash
-#http://www.network-science.de/ascii/
-#cyberlarge
-if [[ $1 == site ]];then
-	echo
-	echo
-	echo
-	printf "
-
-	SİTE \e[31m>\e[32m http://www.network-science.de/ascii\e[0m
-
-	YAZI FONTU \e[31m>\e[32m CYBERLARGE\e[0m
-
-	ADJUSTMENT \e[31m>\e[32m LEFT \e[31m=\e[32m CENTER\e[0m
-	"
-	echo
-	echo
-	echo
-	exit
-fi
 
 #################### GÜNLER ####################
 
@@ -32,19 +13,19 @@ pazar=$(date |grep -o Sun)
 #################### GÜNLERE GÖRE RENKLER ####################
 
 if [[ $pazartesi == Mon ]];then
-	renk1='\e[97m'
+	renk1='\e[0m'
 	renk2='\e[32m'
 elif [[ $sali == Tue ]];then
-	renk1='\e[97m'
+	renk1='\e[0m'
 	renk2='\e[31m'
 elif [[ $carsamba == Wed ]];then
-	renk1='\e[97m'
+	renk1='\e[0m'
 	renk2='\e[33m'
 elif [[ $persembe == Thu ]];then
-	renk1='\e[97m'
+	renk1='\e[0m'
 	renk2='\e[34m'
 elif [[ $cuma == Fri ]];then
-	renk1='\e[97m'
+	renk1='\e[0m'
 	renk2='\e[36m'
 elif [[ $cumartesi == Sat ]];then
 	renk1='\e[31m'
@@ -58,22 +39,32 @@ fi
 
 printf "
 $renk1
+
  _______ _______  ______ _______ _     _ _     _
-    |    |______ |_____/ |  |  | |     |  \___/
+    |    |______ |_____/ |  |  | |     |  \___/ 
     |    |______ |    \_ |  |  | |_____| _/   \_
+                                                
 $renk2
-                 _______  ______ _____ _______ _____ _______
-                 |______ |  ____   |      |      |   |  |  |
-                 |______ |_____| __|__    |    __|__ |  |  |
+ _______  ______ _____ _______ _____ _______
+ |______ |  ____   |      |      |   |  |  |
+ |______ |_____| __|__    |    __|__ |  |  |
+                                            
 
-                            \e[33mSON GÜNCELLEME :\e[0m $(cd .. && sed -n 3p README.md |tr -d "Güncelleme ")
-   \e[31m////////// \e[32mTERMUX EĞİTİM \e[31m//////////\e[32m
-   
-   Coded By  \e[31m>\e[97m UmuT KaRa\e[32m
-   TELEGRAM  \e[31m>\e[97m @termuxegitimm\e[32m
-   İNSTAGRAM \e[31m>\e[97m @termuxegitim\e[32m
-   GİTHUB    \e[31m>\e[97m termux-egitim\e[32m
-   YOUTUBE   \e[31m>\e[97m TERMUX EĞİTİM
+                         \e[33mSON GÜNCELLEME :\e[0m $(cd .. && sed -n 3p README.md |tr -d "Güncelleme ")\e[32m
+  \e[1;97m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>
+  \e[33m|C|O|D|E|D| |B|Y| |U|M|U|T| |K|A|R|A|
+  \e[97m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m
+                                                  
 
-\e[0m
+  \e[97m██████████ \e[33m[\e[32m GİTHUB \e[33m>>\e[32m https://github.com/termux-egitim \e[33m]
+
+  \e[97m███████████████ \e[33m[\e[32m TELEGRAM \e[33m>>\e[32m https://t.me/termuxegitimm \e[33m]
+
+  \e[97m████████████████████ \e[33m[\e[32m İNSTAGRAM \e[33m>>\e[32m https://www.instagram.com/termuxegitim \e[33m]
+
+  \e[97m█████████████████████████ \e[33m[\e[32m YOUTUBE \e[33m>>\e[32m https://youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g \e[33m]\e[0m
+
+
+
 "
+
