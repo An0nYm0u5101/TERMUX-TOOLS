@@ -1,3 +1,3 @@
-termux-egitim
-TERMUX-EGITIM
-Güncelleme 22.01.2021
+termux-tools
+
+Güncelleme 24.01.2021

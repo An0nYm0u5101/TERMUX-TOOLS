@@ -5,7 +5,7 @@ if [[ $1 == güncelle ]];then
 	bash güncelleme.sh güncelle
 	exit
 fi
-hatakontrol=$(curl -s https://github.com/termux-egitim |wc -l)
+hatakontrol=$(curl -s https://github.com/termuxxtoolss |wc -l)
 if [[ $hatakontrol == 0 ]];then
 	echo
 	echo
@@ -22,26 +22,26 @@ if [[ $hatakontrol == 0 ]];then
 fi
 if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 	cd files
-	cp .tools-termux-egitim tools-termux-egitim
-	mv tools-termux-egitim /data/data/com.termux/files/usr/bin
+	cp .tools-termux tools-termux
+	mv tools-termux /data/data/com.termux/files/usr/bin
 	cd ..
-	mkdir $HOME/.TERMUX-EGITIM
-	mv * $HOME/.TERMUX-EGITIM
-	mv .git $HOME/.TERMUX-EGITIM
+	mkdir $HOME/.TERMUX-TOOLS
+	mv * $HOME/.TERMUX-TOOLS
+	mv .git $HOME/.TERMUX-TOOLS
 	cd ..
-	if [[ -a TERMUX-EGITIM ]];then
-		rm -rf TERMUX-EGITIM
+	if [[ -a TERMUX-TOOLS ]];then
+		rm -rf TERMUX-TOOLS
 	fi
-	if [[ -a termux-egitim ]];then
-		rm -rf  termux-egitim
+	if [[ -a termux-tools ]];then
+		rm -rf  termux-tools
 	fi
-	chmod 777 /data/data/com.termux/files/usr/bin/tools-termux-egitim
-	cd $HOME/.TERMUX-EGITIM
-	chmod 777 termux-egitim.sh
+	chmod 777 /data/data/com.termux/files/usr/bin/tools-termux
+	cd $HOME/.TERMUX-TOOLS
+	chmod 777 termux-tools.sh
 	echo
 	echo
 	echo
-	printf "\e[32m[✓] tools-termux-egitim\e[0m KISAYOL OLUŞTURULDU"
+	printf "\e[32m[✓] tools-termux\e[0m KISAYOL OLUŞTURULDU"
 	echo
 	echo
 	echo
@@ -49,8 +49,8 @@ if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 fi
 cd files
 bash güncelleme.sh
-curl -s "https://github.com/termux-egitim?tab=repositories" |grep "<a href=\"/termux-egitim/" > tool.txt
-sed -ie "s/<a href=\"\/termux-egitim\///g" tool.txt
+curl -s "https://github.com/termuxxtoolss?tab=repositories" |grep "<a href=\"/termuxxtoolss/" > tool.txt
+sed -ie "s/<a href=\"\/termuxxtoolss\///g" tool.txt
 sed -ie "s/\" itemprop=\"name codeRepository\" >//g" tool.txt
 cat tool.txt | tr -d " " > tools.txt
 bash banner.sh
@@ -74,7 +74,7 @@ done
 echo
 echo
 echo
-read -e -p $' \e[92mtermuxeğitim\e[97m@\e[92mtools\e[97m~\e[91m>> \e[0m' sec
+read -e -p $' \e[92mtermux\e[97m@\e[92mtools\e[97m~\e[91m>> \e[0m' sec
 if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
@@ -86,16 +86,16 @@ if [[ $sec == x || $sec == X || $sec == exit ]];then
 	rm tool.txt tools.txt tool.txte
 	exit
 elif [[ $sec == telegram || $sec == TELEGRAM ]];then
-	am start -a android.intent.action.VIEW https://t.me/termuxegitimm
+	am start -a android.intent.action.VIEW https://t.me/termuxxtoolss
 	exit
 elif [[ $sec == instagram || $sec == İNSTAGRAM ]];then
-	am start -a android.intent.action.VIEW https://www.instagram.com/termuxegitim
+	am start -a android.intent.action.VIEW https://www.instagram.com/termuxxtoolss
 	exit
 elif [[ $sec == youtube || $sec == YOUTUBE ]];then
 	am start -a android.intent.action.VIEW https://m.youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g
 	exit
 elif [[ $sec == github || $sec == GİTHUB ]];then
-	am start -a android.intent.action.VIEW https://github.com/termux-egitim
+	am start -a android.intent.action.VIEW https://github.com/termuxxtoolss
 	exit
 fi
 satir=$(cat tools.txt |wc -l)
@@ -128,7 +128,7 @@ printf "\e[32m[✓]\e[92m $(sed -n $sec\p tools.txt) \e[0m HOME DİZİNİNE İND
 echo
 echo
 echo
-git clone https://github.com/termux-egitim/$(sed -n $sec\p tools.txt)
+git clone https://github.com/termuxxtoolss/$(sed -n $sec\p tools.txt)
 mv $(sed -n $sec\p tools.txt) $HOME
 rm tool.txt tools.txt tool.txte
 

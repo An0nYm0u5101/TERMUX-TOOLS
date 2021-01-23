@@ -40,15 +40,13 @@ fi
 printf "
 $renk1
 
- _______ _______  ______ _______ _     _ _     _
-    |    |______ |_____/ |  |  | |     |  \___/ 
-    |    |______ |    \_ |  |  | |_____| _/   \_
-                                                
+▀▀█▀▀ ▒█▀▀▀ ▒█▀▀█ ▒█▀▄▀█ ▒█░▒█ ▀▄▒▄▀ 
+░▒█░░ ▒█▀▀▀ ▒█▄▄▀ ▒█▒█▒█ ▒█░▒█ ░▒█░░ 
+░▒█░░ ▒█▄▄▄ ▒█░▒█ ▒█░░▒█ ░▀▄▄▀ ▄▀▒▀▄ 
 $renk2
- _______  ______ _____ _______ _____ _______
- |______ |  ____   |      |      |   |  |  |
- |______ |_____| __|__    |    __|__ |  |  |
-                                            
+▀▀█▀▀ ▒█▀▀▀█ ▒█▀▀▀█ ▒█░░░ ▒█▀▀▀█ 
+░▒█░░ ▒█░░▒█ ▒█░░▒█ ▒█░░░ ░▀▀▀▄▄ 
+░▒█░░ ▒█▄▄▄█ ▒█▄▄▄█ ▒█▄▄█ ▒█▄▄▄█ 
 
                          \e[33mSON GÜNCELLEME :\e[0m $(cd .. && sed -n 3p README.md |tr -d "Güncelleme ")\e[32m
   \e[1;97m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>
@@ -56,11 +54,11 @@ $renk2
   \e[97m+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ >>\e[0m
                                                   
 
-  \e[97m██████████ \e[33m[\e[32m GİTHUB \e[33m>>\e[32m https://github.com/termux-egitim \e[33m]
+  \e[97m██████████ \e[33m[\e[32m GİTHUB \e[33m>>\e[32m https://github.com/termuxxtoolss \e[33m]
 
-  \e[97m███████████████ \e[33m[\e[32m TELEGRAM \e[33m>>\e[32m https://t.me/termuxegitimm \e[33m]
+  \e[97m███████████████ \e[33m[\e[32m TELEGRAM \e[33m>>\e[32m https://t.me/termuxxtoolss \e[33m]
 
-  \e[97m████████████████████ \e[33m[\e[32m İNSTAGRAM \e[33m>>\e[32m https://www.instagram.com/termuxegitim \e[33m]
+  \e[97m████████████████████ \e[33m[\e[32m İNSTAGRAM \e[33m>>\e[32m https://www.instagram.com/termuxxtoolss \e[33m]
 
   \e[97m█████████████████████████ \e[33m[\e[32m YOUTUBE \e[33m>>\e[32m https://youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g \e[33m]\e[0m
 
