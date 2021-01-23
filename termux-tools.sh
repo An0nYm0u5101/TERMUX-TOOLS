@@ -45,8 +45,6 @@ if [[ $kisayol == 0 ]];then
 	echo
 	echo
 	echo
-	cd $HOME
-	$SHELL
 	exit
 fi
 cd files
