@@ -20,10 +20,10 @@ if [[ $hatakontrol == 0 ]];then
 	echo
 	exit
 fi
-if [[ $1 == kısayol || $1 == k || $1 == K ]];then
+kisayol=$(which tools-termux |wc -l)
+if [[ $kisayol == 0 ]];then
 	cd files
-	cp .tools-termux tools-termux
-	mv tools-termux /data/data/com.termux/files/usr/bin
+	cp .tools-termux /data/data/com.termux/files/usr/bin/tools-termux
 	cd ..
 	mkdir $HOME/.TERMUX-TOOLS
 	mv * $HOME/.TERMUX-TOOLS
@@ -45,6 +45,8 @@ if [[ $1 == kısayol || $1 == k || $1 == K ]];then
 	echo
 	echo
 	echo
+	cd $HOME
+	$SHELL
 	exit
 fi
 cd files
@@ -74,7 +76,7 @@ done
 echo
 echo
 echo
-read -e -p $' \e[92mtermux\e[97m@\e[92mtools\e[97m~\e[91m>> \e[0m' sec
+read -e -p $' \e[92mtermuxx\e[97m@\e[92mtoolss\e[97m~\e[91m>> \e[0m' sec
 if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
