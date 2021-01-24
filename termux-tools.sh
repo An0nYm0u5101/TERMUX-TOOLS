@@ -13,7 +13,7 @@ if [[ $hatakontrol == 0 ]];then
 	printf "\e[31m
 	[!]\e[31m \e[0mHATA OLUŞTU \e[31m!!!\e[33m
 
-	[*] \e[0mİNTERNET BAĞLANTINIZI KONTROL EDİN\e[97m
+	[*] \e[0mİNTERNET BAĞLANTINIZI KONTROL EDİN
 	"
 	echo
 	echo
