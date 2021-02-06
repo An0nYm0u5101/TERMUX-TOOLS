@@ -1,6 +1,6 @@
 termux-tools
 
-Güncelleme 25.01.2021
+Güncelleme 06.02.2021
 
 GİTHUB    : https://github.com/termuxxtoolss
 
