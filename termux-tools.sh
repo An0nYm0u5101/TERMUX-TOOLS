@@ -55,22 +55,18 @@ sed -ie "s/\" itemprop=\"name codeRepository\" >//g" tool.txt
 cat tool.txt | tr -d " " > tools.txt
 bash banner.sh
 sayi=$(cat tools.txt |wc -l)
-printf "\e[31m
-   //////////// \e[97mTOOLS\e[31m //////////////
-   
-   "
+color=$(cat .color.txt)
 for no in `seq 1 $sayi` ; do
 	if [[ $no -le 9 ]];then
 		printf "
-		\e[97m[$no]  \e[32m $(sed -n $no\p tools.txt)
+		          \e[97m[$no]  $color $(sed -n $no\p tools.txt)
 		"
 	elif [[ $no -gt 9 ]];then
 		printf "
-		\e[97m[$no] \e[32m $(sed -n $no\p tools.txt)
+		          \e[97m[$no] $color $(sed -n $no\p tools.txt)
 		"
 	fi
 done
-
 echo
 echo
 echo
@@ -84,18 +80,6 @@ if [[ $sec == x || $sec == X || $sec == exit ]];then
 	echo
 	echo
 	rm tool.txt tools.txt tool.txte
-	exit
-elif [[ $sec == telegram || $sec == TELEGRAM ]];then
-	am start -a android.intent.action.VIEW https://t.me/termuxxtoolss
-	exit
-elif [[ $sec == instagram || $sec == İNSTAGRAM ]];then
-	am start -a android.intent.action.VIEW https://www.instagram.com/termuxxtoolss
-	exit
-elif [[ $sec == youtube || $sec == YOUTUBE ]];then
-	am start -a android.intent.action.VIEW https://m.youtube.com/channel/UCE3QvczZXklHSAaRFwDLP5g
-	exit
-elif [[ $sec == github || $sec == GİTHUB ]];then
-	am start -a android.intent.action.VIEW https://github.com/termuxxtoolss
 	exit
 fi
 satir=$(cat tools.txt |wc -l)
