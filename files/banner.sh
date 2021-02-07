@@ -25,7 +25,7 @@ elif [[ $cuma == Fri ]];then
 elif [[ $cumartesi == Sat ]];then
 	color='\e[32m'
 elif [[ $pazar == Sun ]];then
-	color='\e[33m'
+	color='\e[32m'
 fi
 echo -e "$color" > .color.txt
 #################### BANNER ####################
