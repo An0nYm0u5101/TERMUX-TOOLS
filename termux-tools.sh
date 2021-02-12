@@ -5,6 +5,19 @@ if [[ $1 == güncelle ]];then
 	bash güncelleme.sh güncelle
 	exit
 fi
+#################### CURL ####################
+kontrol=$(which curl |wc -l)
+if [[ $kontrol == 0 ]];then
+	echo
+	echo
+	echo
+	printf "\e[32m[✓]\e[97m CURL PAKETİ KURLUYOR"
+	echo
+	echo
+	echo
+	pkg install curl -y
+fi
+###############################################
 hatakontrol=$(curl -s https://github.com/termuxxtoolss |wc -l)
 if [[ $hatakontrol == 0 ]];then
 	echo
