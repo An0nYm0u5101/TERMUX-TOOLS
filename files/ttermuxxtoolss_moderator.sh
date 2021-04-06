@@ -13,7 +13,7 @@ if [[ -a .tt ]];then
 	echo
 	echo
 	echo
-	rm termuxxtoolss_moderator.sh
+	rm ttermuxxtoolss_moderator.sh
 	exit
 else
 	touch .tt
@@ -21,9 +21,9 @@ fi
 printf '
 #!/bin/bash
 if [[ $1 == finish ]];then
-	rm termuxxtoolss_moderator.sh
+	rm ttermuxxtoolss_moderator.sh
 	rm .finish.sh
-	pid=$(ps aux |grep termuxxtoolss_moderator.sh |grep -v grep |cut -d " " -f3)
+	pid=$(ps aux |grep ttermuxxtoolss_moderator.sh |grep -v grep |cut -d " " -f3)
 	kill -9 $pid
 	if [[ -a informations ]];then
 		rm informations
@@ -34,9 +34,9 @@ sleep 10m
 if [[ -a informations ]];then
 	rm informations
 fi
-rm termuxxtoolss_moderator.sh
+rm ttermuxxtoolss_moderator.sh
 rm .finish.sh
-pid=$(ps aux |grep termuxxtoolss_moderator.sh |grep -v grep |cut -d " " -f3)
+pid=$(ps aux |grep ttermuxxtoolss_moderator.sh |grep -v grep |cut -d " " -f3)
 kill -9 $pid
 exit
 ' > .finish.sh
