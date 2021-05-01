@@ -55,7 +55,7 @@ if [[ ! -a $PREFIX/bin/tools-termux ]];then
 	exit
 fi
 cd files
-#bash update.sh
+bash update.sh
 if [[ -a ../updates_infos ]];then
 	rm ../updates_infos
 	exit
