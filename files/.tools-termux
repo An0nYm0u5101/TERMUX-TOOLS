@@ -1,3 +1,4 @@
 #!/bin/bash
+pwd > $HOME/.TERMUX-TOOLS/files/.pwd
 cd $HOME/.TERMUX-TOOLS
-bash termux-tools.sh
+bash termux-tools.sh $1

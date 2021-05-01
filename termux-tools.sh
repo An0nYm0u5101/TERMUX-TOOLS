@@ -119,6 +119,15 @@ fi
 echo
 echo
 echo
+directory="$HOME"
+directory_name='HOME'
+if [[ -n $1 ]];then
+	directory="$(cat .pwd)"
+	total=$(echo -e "$directory" |grep -o / |wc -l)
+	let total+=1
+	name=$(echo -e "$directory" |awk -F "/" "{print \$$total}")
+	directory_name="$name"
+fi
 tool_name=$(sed -n $secim\p tools.txt)
 if [[ -a $HOME/$tool_name ]];then
 	cd $HOME/$tool_name
@@ -126,11 +135,11 @@ if [[ -a $HOME/$tool_name ]];then
 	bash $script_name
 	exit
 fi
-printf "\e[32m[✓]\e[92m $(sed -n $secim\p tools.txt) \e[0m HOME DİZİNİNE İNDİRİLİYOR "
+printf "\e[32m[✓]\e[92m $(sed -n $secim\p tools.txt) \e[0m $directory_name DİZİNİNE İNDİRİLİYOR "
 echo
 echo
 echo
 git clone https://github.com/termuxxtoolss/$(sed -n $secim\p tools.txt)
-mv $(sed -n $secim\p tools.txt) $HOME
+mv $(sed -n $secim\p tools.txt) $directory
 rm tool.txt tools.txt tool.txte
 
