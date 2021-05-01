@@ -1,7 +1,5 @@
 termux-tools
 
-Güncelleme 12.02.2021
-
 GİTHUB    : https://github.com/termuxxtoolss
 
 TELEGRAM  : https://t.me/termuxxtoolss
