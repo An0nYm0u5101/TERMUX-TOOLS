@@ -42,7 +42,7 @@ if [[ ! -a $PREFIX/bin/tools-termux ]];then
 	mv * $HOME/.TERMUX-TOOLS
 	mv .git $HOME/.TERMUX-TOOLS
 	cd ..
-	rm -rf $(cat bashprotector/.git/config |grep url |awk -F '/' '{print $5}')
+	rm -rf $(cat .TERMUX-TOOLS/.git/config |grep url |awk -F '/' '{print $5}')
 	chmod 777 /data/data/com.termux/files/usr/bin/tools-termux
 	chmod 777 $HOME/.TERMUX-TOOLS/termux-tools.sh
 	echo
