@@ -64,7 +64,7 @@ bash banner.sh
 curl -s "https://github.com/termuxxtoolss?tab=repositories" |grep "<a href=\"/termuxxtoolss/" > tool.txt
 sed -ie "s/<a href=\"\/termuxxtoolss\///g" tool.txt
 sed -ie "s/\" itemprop=\"name codeRepository\" >//g" tool.txt
-cat tool.txt | tr -d " " > tools.txt
+cat tool.txt | tr -d " " |grep -v termuxxtoolss.github.io > tools.txt
 total=$(cat tools.txt |wc -l)
 color=$(cat .color.txt)
 for no in `seq 1 $total` ; do
