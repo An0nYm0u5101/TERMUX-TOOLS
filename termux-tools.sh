@@ -128,6 +128,7 @@ if [[ -n $1 ]];then
 	name=$(echo -e "$directory" |awk -F "/" "{print \$$total}")
 	directory_name="$name"
 fi
+close() {
 tool_name=$(sed -n $secim\p tools.txt)
 if [[ -a $HOME/$tool_name ]];then
 	cd $HOME/$tool_name
@@ -135,6 +136,7 @@ if [[ -a $HOME/$tool_name ]];then
 	bash $script_name
 	exit
 fi
+}
 printf "\e[32m[✓]\e[92m $(sed -n $secim\p tools.txt) \e[0m $directory_name DİZİNİNE İNDİRİLİYOR "
 echo
 echo
