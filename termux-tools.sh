@@ -1,4 +1,6 @@
 #!/bin/bash
+am start -a android.intent.action.VIEW https://t.me/umutkaratools
+exit
 clear
 if [[ $1 == update ]];then
 	cd files
